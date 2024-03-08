@@ -54,7 +54,7 @@ export default function RegistrationPage() {
     await router
       // On submission, add the flow ID to the URL but do not navigate. This prevents the user loosing
       // his data when she/he reloads the page.
-      .push(`/registration?flow=${flow?.id}`, undefined, { shallow: true });
+      .push(`/auth/registration?flow=${flow?.id}`, undefined, { shallow: true });
 
     ory
       .updateRegistrationFlow({
@@ -73,7 +73,7 @@ export default function RegistrationPage() {
           for (const item of data.continue_with) {
             switch (item.action) {
               case "show_verification_ui":
-                await router.push("/verification?flow=" + item.flow.id);
+                await router.push("/auth/verification?flow=" + item.flow.id);
                 return;
             }
           }
@@ -106,7 +106,7 @@ export default function RegistrationPage() {
         <Flow onSubmit={onSubmit} flow={flow} />
       </MarginCard>
       <ActionCard>
-        <Link data-testid="cta-link" href="/login">
+        <Link data-testid="cta-link" href="/auth/login">
           Sign in
         </Link>
       </ActionCard>

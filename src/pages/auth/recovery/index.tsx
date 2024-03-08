@@ -58,7 +58,7 @@ export default function RecoveryPage() {
     router
       // On submission, add the flow ID to the URL but do not navigate. This prevents the user loosing
       // his data when she/he reloads the page.
-      .push(`/recovery?flow=${flow?.id}`, undefined, { shallow: true })
+      .push(`/auth/recovery?flow=${flow?.id}`, undefined, { shallow: true })
       .then(() =>
         ory
           .updateRecoveryFlow({

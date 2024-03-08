@@ -91,7 +91,7 @@ function Settings() {
               for (const item of data.continue_with) {
                 switch (item.action) {
                   case "show_verification_ui":
-                    router.push("/verification?flow=" + item.flow.id);
+                    router.push("/auth/verification?flow=" + item.flow.id);
                     return;
                 }
               }

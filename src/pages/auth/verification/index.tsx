@@ -61,7 +61,7 @@ function Verification(): React.JSX.Element {
     await router
       // On submission, add the flow ID to the URL but do not navigate. This prevents the user loosing
       // their data when they reload the page.
-      .push(`/verification?flow=${flow?.id}`, undefined, { shallow: true });
+      .push(`/auth/verification?flow=${flow?.id}`, undefined, { shallow: true });
 
     ory
       .updateVerificationFlow({
@@ -84,7 +84,7 @@ function Verification(): React.JSX.Element {
             router
               // On submission, add the flow ID to the URL but do not navigate. This prevents the user losing
               // their data when they reload the page.
-              .push(`/verification?flow=${newFlowID}`, undefined, {
+              .push(`/auth/verification?flow=${newFlowID}`, undefined, {
                 shallow: true,
               });
 

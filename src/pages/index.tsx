@@ -117,7 +117,7 @@ export default function Home() {
             // This status code is returned when we are trying to
             // validate a session which has not yet completed
             // its second factor
-            return router.push("/login?aal=aal2");
+            return router.push("/auth/login?aal=aal2");
           case 401:
             // do nothing, the user is not logged in
             return;
@@ -202,28 +202,28 @@ export default function Home() {
           <DocsButton
             unresponsive
             testid="login"
-            href="/login"
+            href="/auth/login"
             disabled={hasSession}
             title={"Login"}
           />
           <DocsButton
             unresponsive
             testid="sign-up"
-            href="/registration"
+            href="/auth/registration"
             disabled={hasSession}
             title={"Sign Up"}
           />
           <DocsButton
             unresponsive
             testid="recover-account"
-            href="/recovery"
+            href="/auth/recovery"
             disabled={hasSession}
             title="Recover Account"
           />
           <DocsButton
             unresponsive
             testid="verify-account"
-            href="/verification"
+            href="/auth/verification"
             title="Verify Account"
           />
           <DocsButton

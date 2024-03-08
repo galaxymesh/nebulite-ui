@@ -129,12 +129,12 @@ function Login(): React.JSX.Element {
       ) : (
         <React.Fragment>
           <ActionCard>
-            <Link href="/registration" passHref legacyBehavior>
+            <Link href="/auth/registration" passHref legacyBehavior>
               <a>Create account</a>
             </Link>
           </ActionCard>
           <ActionCard>
-            <Link href="/recovery" passHref legacyBehavior>
+            <Link href="/auth/recovery" passHref legacyBehavior>
               <a>Recover your account</a>
             </Link>
           </ActionCard>

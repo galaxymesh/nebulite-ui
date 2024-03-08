@@ -54,7 +54,9 @@ export default function RegistrationPage() {
     await router
       // On submission, add the flow ID to the URL but do not navigate. This prevents the user loosing
       // his data when she/he reloads the page.
-      .push(`/auth/registration?flow=${flow?.id}`, undefined, { shallow: true });
+      .push(`/auth/registration?flow=${flow?.id}`, undefined, {
+        shallow: true,
+      });
 
     ory
       .updateRegistrationFlow({
